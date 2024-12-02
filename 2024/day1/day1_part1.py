@@ -1,12 +1,15 @@
-# input = """3   4
-# 4   3
-# 2   5
-# 1   3
-# 3   9
-# 3   3
-# """
+use_test_input = False
 
-input = open("input_day1_part1.txt", "r").read()
+if use_test_input:
+    input = """3   4
+    4   3
+    2   5
+    1   3
+    3   9
+    3   3
+    """
+else:
+    input = open("input_day1_part1.txt", "r").read()
 
 list1 = []
 list2 = []
@@ -26,4 +29,4 @@ total = 0
 for left, right in zip(sorted_list1, sorted_list2):
     total += abs(right - left)
 
-print(total)
+print(f"Total: {total}")
